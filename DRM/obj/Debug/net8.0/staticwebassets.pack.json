@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\work\\DRM\\SUPERADMIN\\DRM\\wwwroot\\Content\\audio\\Wannabe (1) (1).mp3",
+      "PackagePath": "staticwebassets\\Content\\audio\\Wannabe (1) (1).mp3"
+    },
+    {
       "Id": "D:\\work\\DRM\\SUPERADMIN\\DRM\\wwwroot\\Content\\audio\\Wannabe (1).mp3",
       "PackagePath": "staticwebassets\\Content\\audio\\Wannabe (1).mp3"
     },

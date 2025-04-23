@@ -21,44 +21,6 @@ namespace DRM.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("AssignUser", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("AssignedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid?>("AudioId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("PdfId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid?>("VideoId")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AudioId");
-
-                    b.HasIndex("PdfId");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("VideoId");
-
-                    b.ToTable("AssignUsers", (string)null);
-                });
-
             modelBuilder.Entity("AudioFile", b =>
                 {
                     b.Property<Guid>("Id")
@@ -187,44 +149,6 @@ namespace DRM.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("DRM.Models.Requests", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("AudioId")
-                        .HasColumnType("uuid");
-
-                    b.Property<bool>("IsAccepted")
-                        .HasColumnType("boolean");
-
-                    b.Property<Guid?>("PdfId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("RequestedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid?>("VideoId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AudioId");
-
-                    b.HasIndex("PdfId");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("VideoId");
-
-                    b.ToTable("Requests", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -436,70 +360,6 @@ namespace DRM.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("VideoFiles", (string)null);
-                });
-
-            modelBuilder.Entity("AssignUser", b =>
-                {
-                    b.HasOne("AudioFile", "AudioFile")
-                        .WithMany()
-                        .HasForeignKey("AudioId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("PdfFile", "PdfFile")
-                        .WithMany()
-                        .HasForeignKey("PdfId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("DRM.Data.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("VideoFile", "VideoFile")
-                        .WithMany()
-                        .HasForeignKey("VideoId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("AudioFile");
-
-                    b.Navigation("PdfFile");
-
-                    b.Navigation("User");
-
-                    b.Navigation("VideoFile");
-                });
-
-            modelBuilder.Entity("DRM.Models.Requests", b =>
-                {
-                    b.HasOne("AudioFile", "AudioFile")
-                        .WithMany()
-                        .HasForeignKey("AudioId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("PdfFile", "PdfFile")
-                        .WithMany()
-                        .HasForeignKey("PdfId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("DRM.Data.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("VideoFile", "VideoFile")
-                        .WithMany()
-                        .HasForeignKey("VideoId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("AudioFile");
-
-                    b.Navigation("PdfFile");
-
-                    b.Navigation("User");
-
-                    b.Navigation("VideoFile");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
