@@ -463,3 +463,4 @@ D:\work\DRM\SUPERADMIN\DRM\obj\Debug\net8.0\refint\DRM.dll
 D:\work\DRM\SUPERADMIN\DRM\obj\Debug\net8.0\DRM.pdb
 D:\work\DRM\SUPERADMIN\DRM\obj\Debug\net8.0\DRM.genruntimeconfig.cache
 D:\work\DRM\SUPERADMIN\DRM\obj\Debug\net8.0\ref\DRM.dll
+D:\work\DRM\SUPERADMIN\DRM\obj\Debug\net8.0\DRM.sourcelink.json
