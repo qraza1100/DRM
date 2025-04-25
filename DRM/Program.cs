@@ -41,6 +41,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 
 // Add MVC & Razor Pages
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -78,6 +79,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
+app.MapControllers();
 
 // Map Controllers and Razor Pages
 app.MapControllerRoute(

@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "DRM.Helpers.LiscenseHelper",
+    "Method": "CheckExpiry",
+    "RelativePath": "api/LiscenseHelper/api/check-expiry",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

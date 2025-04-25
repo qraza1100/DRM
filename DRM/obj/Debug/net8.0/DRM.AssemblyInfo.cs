@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DRM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12fc24ac1b7f8cac37d210d4881e86e597088360")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9345e8055b822336883c4e53435e3c4e03a31c08")]
 [assembly: System.Reflection.AssemblyProductAttribute("DRM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DRM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

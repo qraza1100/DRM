@@ -44,7 +44,11 @@ namespace DRM.Controllers
                     user.Designation,
                     Roles = string.Join(", ", roles), // Store roles as a comma-separated string
                     LockedOut = user.LockoutEnd.HasValue && user.LockoutEnd.Value > DateTime.UtcNow,
-                    ProfileImage = !string.IsNullOrEmpty(user.ProfileImage) ? "/" + user.ProfileImage.Replace("\\", "/") : "/images/default-profile.png"
+                    ProfileImage = !string.IsNullOrEmpty(user.ProfileImage) ? "/" + user.ProfileImage.Replace("\\", "/") : "/images/default-profile.png",
+                    user.Liscense,
+                    user.LiscenceExpiry,
+                    user.AllowedStudents
+                 
                 });
             }
 
@@ -119,7 +123,11 @@ namespace DRM.Controllers
                 Designation = user.Designation ?? "N/A",
                 Roles = roles.Count > 0 ? string.Join(", ", roles) : "No Role",
                 LockedOut = user.LockoutEnd.HasValue && user.LockoutEnd.Value > DateTime.UtcNow,
-                ProfileImage = !string.IsNullOrEmpty(user.ProfileImage) ? "/" + user.ProfileImage.Replace("\\", "/") : "/images/default-profile.png"
+                ProfileImage = !string.IsNullOrEmpty(user.ProfileImage) ? "/" + user.ProfileImage.Replace("\\", "/") : "/images/default-profile.png",
+                user.Liscense,
+                user.LiscenceExpiry,
+                user.AllowedStudents
+
             });
         }
 

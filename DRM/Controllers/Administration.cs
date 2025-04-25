@@ -86,8 +86,10 @@ namespace DRM.Controllers
                     ProfileImage = filePath,
                     Designation = model.Designation.Trim(),
                     UniqueKey = uniqueKey,
-                    Liscense = model.Liscense,
-                    LiscenceExpiry = model.LiscenceExpiry,
+                    Liscense = $"DRMLISCENSE:{model.Name}",
+                    LiscenceExpiry = model.LiscenceExpiry.HasValue
+                    ? DateTime.SpecifyKind(model.LiscenceExpiry.Value, DateTimeKind.Utc)
+                    : null,
                     AllowedStudents = model.AllowedStudents
                 };
 

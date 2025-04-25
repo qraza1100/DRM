@@ -24,8 +24,17 @@ namespace DRM.Data
         [StringLength(255)]
         public string? Liscense { get; set; } = "no";
 
+
+        private DateTime? _liscenceExpiry;
+
         [DataType(DataType.Date)]
-        public DateTime? LiscenceExpiry { get; set; }
+        public DateTime? LiscenceExpiry
+        {
+            get => _liscenceExpiry;
+            set => _liscenceExpiry = value.HasValue
+                ? DateTime.SpecifyKind(value.Value, DateTimeKind.Utc)
+                : null;
+        }
 
         public int? AllowedStudents { get; set; }
         public string? UniqueKey
